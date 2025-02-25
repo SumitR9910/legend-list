@@ -22,7 +22,7 @@ export const Container = ({
     horizontal: boolean;
     getRenderedItem: (key: string) => { index: number; renderedItem: React.ReactNode } | null;
     updateItemSize: (containerId: number, itemKey: string, size: number) => void;
-    ItemSeparatorComponent?: React.ReactNode;
+    ItemSeparatorComponent?: (index: number, item: React.ReactNode) => React.ComponentType<any>;
 }) => {
     const ctx = useStateContext();
     const maintainVisibleContentPosition = use$<boolean>("maintainVisibleContentPosition");
